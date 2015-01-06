@@ -1,5 +1,11 @@
-require "oargun/version"
+require 'oargun/version'
+require 'active_support'
+require 'active_triples'
 
 module Oargun
-  # Your code goes here...
+  extend ActiveSupport::Autoload
+  autoload :ControlledVocabularies
+  autoload :Qa
+  autoload :RDF
+  autoload :Vocabularies
 end
