@@ -23,4 +23,6 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "rspec", "~> 3.0"
 
   spec.add_dependency "activesupport", "~> 4.0"
+  spec.add_dependency 'rest_client', '~> 1.8'
+  spec.add_dependency 'qa', '~> 0.3.0'
 end
