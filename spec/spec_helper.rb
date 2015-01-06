@@ -10,6 +10,33 @@ RDF_VOCABS = {
 
 require 'oargun'
 
+module Rails
+  def self.env
+    'test'
+  end
+  class Engine
+    def self.isolate_namespace(*)
+      #nop
+    end
+  end
+end
+
+WITHOUT_QA = true
+module Qa
+  module Authorities
+    class Loc
+    end
+  end
+end
+
+ActiveTriples::Repositories.add_repository :vocabs, RDF::Repository.new
+
+
+require 'webmock/rspec'
+# Allow http connections on localhost
+WebMock.disable_net_connect!(allow_localhost: true)
+
+
 RSpec.configure do |config|
 
 end

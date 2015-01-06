@@ -1,3 +1,6 @@
+# Don't include QA when we're testing because we don't have a database setup
+require 'qa' unless defined? WITHOUT_QA
+
 module Oargun::ControlledVocabularies
   class Subject < ActiveTriples::Resource
     include Oargun::RDF::Controlled
@@ -15,10 +18,12 @@ module Oargun::ControlledVocabularies
     class QaLcsh < Qa::Authorities::Loc
       include Oargun::Qa::Caching
       def search(q, sub_authority=nil)
+        puts "Searching"
         super(q, 'subjects')
       end
 
       def loc_response_to_qa(data)
+        puts "REPSONSE"
         response = super(data)
         for link in data.links
           response["id"] = link[1] if link[0].nil?

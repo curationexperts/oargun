@@ -19,4 +19,11 @@ RDF_VOCABS = {
   lcnames:     { prefix: 'http://id.loc.gov/authorities/names/', strict: false, fetch: false },
   aat:         { prefix: 'http://vocab.getty.edu/aat/', strict: false, fetch: false }
 }
+
+```
+
+And you must register a `vocabs` repository:
+
+```ruby
+    ActiveTriples::Repositories.add_repository :vocabs, RDF::Repository.new
 ```
