@@ -3,4 +3,5 @@ module Oargun::ControlledVocabularies
   autoload :Geographic
   autoload :Subject
   autoload :WorkType
+  autoload :Creator
 end
