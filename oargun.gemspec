@@ -24,7 +24,7 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "webmock", "~> 1.20"
 
   spec.add_dependency "activesupport", "~> 4.0"
-  spec.add_dependency 'rest_client', '~> 1.8'
+  spec.add_dependency 'rest-client', '~> 1.7'
   spec.add_dependency 'qa', '~> 0.3.0'
   spec.add_dependency 'active-triples', '~> 0.5.0'
 end
