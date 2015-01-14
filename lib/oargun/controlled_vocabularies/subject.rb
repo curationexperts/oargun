@@ -5,7 +5,7 @@ module Oargun::ControlledVocabularies
     #metadata librarians want multiple authoritative sources with dct.subject
     use_vocabulary :lcsh
     # use_vocabulary :lcnames
-    # use_vocabulary :tgm
+    use_vocabulary :tgm
     use_vocabulary :aat
     # use_vocabulary :subject
     # use_vocabulary :lc_orgs
