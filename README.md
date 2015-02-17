@@ -27,3 +27,14 @@ And you must register a `vocabs` repository:
 ```ruby
     ActiveTriples::Repositories.add_repository :vocabs, RDF::Repository.new
 ```
+
+## Developer Setup
+
+For development on the oargun gem itself
+
+To run the specs:
+
+```bash
+bundle exec rspec
+```
+
