@@ -7,4 +7,5 @@ module Oargun::ControlledVocabularies
   autoload :Subject
   autoload :WorkType
   autoload :Creator
+  autoload :Language
 end

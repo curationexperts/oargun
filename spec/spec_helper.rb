@@ -3,6 +3,7 @@ $LOAD_PATH.unshift(File.dirname(__FILE__))
 
 RDF_VOCABS = {
   geonames:      { prefix: 'http://sws.geonames.org/', strict: false, fetch: false },
+  iso_639_2:     { prefix: 'http://id.loc.gov/vocabulary/iso639-2/', source: 'http://id.loc.gov/vocabulary/iso639-2.nt'},
   lcsh:          { prefix: 'http://id.loc.gov/authorities/subjects/', strict: false, fetch: false },
   lcnames:       { prefix: 'http://id.loc.gov/authorities/names/', strict: false, fetch: false },
   tgm:           { prefix: 'http://id.loc.gov/vocabulary/graphicMaterials', strict: false, fetch: false },

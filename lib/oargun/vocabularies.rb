@@ -4,6 +4,7 @@ module Oargun
     autoload :AAT
     autoload :DUMMYCREATOR
     autoload :GEONAMES
+    autoload :ISO_639_2
     autoload :LCSH
     autoload :LCNAMES
     autoload :LDP
