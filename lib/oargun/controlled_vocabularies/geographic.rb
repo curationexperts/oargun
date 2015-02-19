@@ -7,6 +7,7 @@ module Oargun::ControlledVocabularies
     configure :rdf_label => RDF::URI('http://www.geonames.org/ontology#name')
     use_vocabulary :geonames
     use_vocabulary :lcnames
+    use_vocabulary :lcsh
 
     property :geoname, :predicate => RDF::URI('http://www.geonames.org/ontology#name')
     property :latitude, :predicate => RDF::URI('http://www.w3.org/2003/01/geo/wgs84_pos#lat')

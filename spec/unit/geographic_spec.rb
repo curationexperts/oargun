@@ -2,7 +2,15 @@ require 'spec_helper'
 
 describe 'A controlled vocabulary' do
 
-  context 'when the location is in the vocabulary' do
+  context 'when the location is in LCSH' do
+    let(:location) { RDF::URI.new('http://id.loc.gov/authorities/subjects/sh2010014379') }
+    it "should create an object" do
+      expect {
+        Oargun::ControlledVocabularies::Geographic.new(location)
+      }.not_to raise_error
+    end
+  end
+  context 'when the location is in LC names' do
     let(:location) { RDF::URI.new('http://id.loc.gov/authorities/names/n79081574') }
     it "should create an object" do
       expect {
