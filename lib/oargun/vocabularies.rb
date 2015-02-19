@@ -8,6 +8,7 @@ module Oargun
     autoload :LCSH
     autoload :LCNAMES
     autoload :LDP
+    autoload :MARCREL
     autoload :TGM
     autoload :VRA
   end
