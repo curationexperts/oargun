@@ -9,6 +9,8 @@ RDF_VOCABS = {
   tgm:           { prefix: 'http://id.loc.gov/vocabulary/graphicMaterials', strict: false, fetch: false },
   aat:           { prefix: 'http://vocab.getty.edu/aat/', strict: false, fetch: false },
   dummycreator:  { prefix: 'http://dummynamespace.org/creator/', strict: false, fetch: false },
+  ccpublic:      { prefix: 'http://creativecommons.org/publicdomain/', source: 'https://raw.github.com/OregonDigital/opaque_ns/master/cclicenses/cclicenses.nt'},
+  eurights:      { prefix: 'http://www.europeana.eu/rights/', source: 'https://raw.github.com/OregonDigital/opaque_ns/master/eurights/rightsstatements.nt', strict: true },
 }
 
 require 'oargun'
