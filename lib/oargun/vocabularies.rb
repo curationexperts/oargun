@@ -11,7 +11,6 @@ module Oargun
     autoload :LCNAMES
     autoload :LDP
     autoload :MARCREL
-    autoload :OARGUN
     autoload :TGM
     autoload :VRA
   end
