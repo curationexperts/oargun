@@ -65,6 +65,11 @@ module Oargun::RDF
       node? ? [] : [rdf_subject.to_s]
     end
 
+    def fetch
+      return unless rdf_label == [rdf_subject.to_s] || rdf_label.empty? || rdf_label.length > 1
+      super
+    end
+
     ##
     #  Class methods for adding and using controlled vocabularies
     module ClassMethods
