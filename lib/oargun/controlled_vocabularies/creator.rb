@@ -7,7 +7,7 @@ module Oargun::ControlledVocabularies
     use_vocabulary :dummycreator
 
     def initialize(*args)
-      args[0] = assign_subject(args.first) unless args.first.to_s.start_with?("http")
+      args[0] = assign_subject(args.first) if args.first && !args.first.to_s.start_with?("http")
       super
       if @new_label
         self << RDF::Statement.new(rdf_subject, RDF::SKOS.prefLabel, @new_label)

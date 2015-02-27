@@ -20,4 +20,9 @@ describe 'A controlled vocabulary' do
        'Term http://foo.bar/authorities/names/n79081574 not in controlled vocabularies for Oargun::ControlledVocabularies::Creator')
     end
   end
+
+  context 'when initialized without an argument' do
+    subject { Oargun::ControlledVocabularies::Creator.new }
+    it { is_expected.to be_a_node }
+  end
 end
