@@ -2,6 +2,10 @@ require 'spec_helper'
 
 describe 'A controlled vocabulary' do
 
+  before do
+    Oargun::ControlledVocabularies::Creator.use_vocabulary :lcnames
+  end
+
   context 'when the name is in the vocabulary' do
     let(:name) { RDF::URI.new('http://id.loc.gov/authorities/names/n79081574') }
     it "should create an object" do
