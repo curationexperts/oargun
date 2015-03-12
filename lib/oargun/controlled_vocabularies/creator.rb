@@ -4,8 +4,8 @@ module Oargun::ControlledVocabularies
 
     class QaLcNames < Qa::Authorities::Loc
       include Oargun::Qa::Caching
-      def search(q, sub_authority=nil)
-        super(q, 'names')
+      def initialize
+        super('names')
       end
     end
 

@@ -14,9 +14,8 @@ module Oargun::ControlledVocabularies
 
     class QaLcsh < Qa::Authorities::Loc
       include Oargun::Qa::Caching
-      def search(q, sub_authority=nil)
-        puts "Searching"
-        super(q, 'subjects')
+      def initialize
+        super('subjects')
       end
 
       def loc_response_to_qa(data)

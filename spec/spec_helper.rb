@@ -26,14 +26,6 @@ module Rails
   end
 end
 
-WITHOUT_QA = true
-module Qa
-  module Authorities
-    class Loc
-    end
-  end
-end
-
 ActiveTriples::Repositories.add_repository :vocabs, RDF::Repository.new
 
 
