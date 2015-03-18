@@ -2,6 +2,7 @@ module Oargun
   module Vocabularies
     extend ActiveSupport::Autoload
     autoload :AAT
+    autoload :CCLICENSES
     autoload :CCPUBLIC
     autoload :EURIGHTS
     autoload :GEONAMES
@@ -11,6 +12,7 @@ module Oargun
     autoload :LDP
     autoload :MARCREL
     autoload :TGM
+    autoload :RIGHTS
     autoload :VRA
   end
 end
