@@ -9,9 +9,10 @@ module Oargun::ControlledVocabularies
     use_vocabulary :cclicenses
     use_vocabulary :ccpublic
 
-    def fetch
-      # Don't try to fetch if it's opaquenamespace
-      unless rdf_subject.to_s.match(/opaquenamespace/)
+    def rdf_label
+      if rdf_subject.to_s.match(/opaquenamespace/)
+        Array(rdf_subject.label)
+      else
         super
       end
     end
