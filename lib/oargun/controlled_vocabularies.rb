@@ -8,5 +8,6 @@ module Oargun::ControlledVocabularies
   autoload :WorkType
   autoload :Creator
   autoload :Language
+  autoload :Organization
   autoload :RightsStatement
 end

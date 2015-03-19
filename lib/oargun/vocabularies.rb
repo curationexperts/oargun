@@ -9,8 +9,10 @@ module Oargun
     autoload :ISO_639_2
     autoload :LCSH
     autoload :LCNAMES
+    autoload :LC_ORGS
     autoload :LDP
     autoload :MARCREL
+    autoload :OARGUN
     autoload :TGM
     autoload :RIGHTS
     autoload :VRA
