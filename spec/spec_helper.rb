@@ -13,6 +13,7 @@ LinkedVocabs.add_vocabulary('aat', 'http://vocab.getty.edu/aat/')
 LinkedVocabs.add_vocabulary('cclicenses', 'http://creativecommons.org/licenses/')
 LinkedVocabs.add_vocabulary('rights', 'http://opaquenamespace.org/rights/')
 LinkedVocabs.add_vocabulary('lc_orgs', 'http://id.loc.gov/vocabulary/organizations/')
+LinkedVocabs.add_vocabulary('ldp', 'http://www.w3.org/ns/ldp#')
 
 module Rails
   def self.env
