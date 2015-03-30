@@ -1,6 +1,6 @@
 module Oargun::ControlledVocabularies
   class WorkType < ActiveTriples::Resource
-    include Oargun::RDF::Controlled
+    include LinkedVocabs::Controlled
 
     use_vocabulary :aat
     use_vocabulary :ldp

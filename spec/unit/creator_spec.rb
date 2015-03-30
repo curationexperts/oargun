@@ -3,7 +3,7 @@ require 'spec_helper'
 describe 'A controlled vocabulary' do
 
   before do
-    Oargun::ControlledVocabularies::Creator.use_vocabulary :lcnames
+    Oargun::ControlledVocabularies::Creator.use_vocabulary :lcnames, class: Oargun::Vocabularies::LCNAMES
   end
 
   context 'when the name is in the vocabulary' do
@@ -17,11 +17,10 @@ describe 'A controlled vocabulary' do
 
   context 'when the name is not in the vocabulary' do
     let(:name) { RDF::URI.new('http://foo.bar/authorities/names/n79081574') }
+    let(:creator) { Oargun::ControlledVocabularies::Creator.new(name) }
     it "should be a problem" do
-      expect {
-        Oargun::ControlledVocabularies::Creator.new(name)
-      }.to raise_error(Oargun::RDF::Controlled::ControlledVocabularyError,
-       'Term http://foo.bar/authorities/names/n79081574 not in controlled vocabularies for Oargun::ControlledVocabularies::Creator')
+      expect(creator).not_to be_valid
+      expect(creator.errors[:base].first).to start_with 'http://foo.bar/authorities/names/n79081574 is not a term in a controlled vocabulary'
     end
   end
 

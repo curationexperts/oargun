@@ -1,6 +1,6 @@
 module Oargun::ControlledVocabularies
   class Creator < ActiveTriples::Resource
-    include Oargun::RDF::Controlled
+    include LinkedVocabs::Controlled
 
     class QaLcNames < Qa::Authorities::Loc
       include Oargun::Qa::Caching

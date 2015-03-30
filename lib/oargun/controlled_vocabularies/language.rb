@@ -1,8 +1,6 @@
 module Oargun::ControlledVocabularies
   class Language < ActiveTriples::Resource
-    include Oargun::RDF::Controlled
-    # use_vocabulary :iso_639_1
-    use_vocabulary :iso_639_2
-    # use_vocabulary :marc_lang
+    include LinkedVocabs::Controlled
+    use_vocabulary :iso_639_2, class: Oargun::Vocabularies::ISO_639_2
   end
 end

@@ -25,6 +25,8 @@ Gem::Specification.new do |spec|
 
   spec.add_dependency "activesupport", "~> 4.0"
   spec.add_dependency 'rest-client', '~> 1.7'
+  spec.add_dependency 'linked_vocabs', '~> 0.2'
   spec.add_dependency 'qa', '~> 0.4.0'
   spec.add_dependency 'active-triples', '~> 0.6.0'
+  spec.add_dependency 'active-fedora', '~> 9.0.0'
 end

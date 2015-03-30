@@ -1,16 +1,10 @@
 module Oargun::ControlledVocabularies
   class Subject < ActiveTriples::Resource
-    include Oargun::RDF::Controlled
+    include LinkedVocabs::Controlled
 
-    #metadata librarians want multiple authoritative sources with dct.subject
-    use_vocabulary :lcsh
-    # use_vocabulary :lcnames
-    use_vocabulary :tgm
-    use_vocabulary :aat
-    # use_vocabulary :subject
-    # use_vocabulary :lc_orgs
-    # use_vocabulary :creator
-    # use_vocabulary :people
+    use_vocabulary :lcsh, class: Oargun::Vocabularies::LCSH
+    use_vocabulary :tgm, class: Oargun::Vocabularies::TGM
+    use_vocabulary :aat, class: Oargun::Vocabularies::AAT
 
     class QaLcsh < Qa::Authorities::Loc
       include Oargun::Qa::Caching
@@ -19,7 +13,6 @@ module Oargun::ControlledVocabularies
       end
 
       def loc_response_to_qa(data)
-        puts "REPSONSE"
         response = super(data)
         for link in data.links
           response["id"] = link[1] if link[0].nil?
