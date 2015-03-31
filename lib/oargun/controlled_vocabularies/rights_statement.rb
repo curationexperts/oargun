@@ -12,10 +12,12 @@ module Oargun::ControlledVocabularies
 
     def rdf_label
       if rdf_subject.to_s.match(/opaquenamespace/)
-        Array(rdf_subject.label)
+        term = RDF::Vocabulary.find_term(rdf_subject.to_s)
+        Array(term.label)
       else
         super
       end
     end
   end
+
 end
