@@ -11,13 +11,13 @@ module Oargun::ControlledVocabularies
     use_vocabulary :cclicenses, class: Oargun::Vocabularies::CCLICENSES
 
     def rdf_label
-      if rdf_subject.respond_to?(:label)
-        super
-      else
+      if rdf_subject.to_s.match(/opaquenamespace/)
         term = RDF::Vocabulary.find_term(rdf_subject.to_s)
         Array(term.label)
+      else
+        super
       end
     end
-
   end
+
 end
