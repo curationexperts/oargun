@@ -9,5 +9,13 @@ module Oargun::ControlledVocabularies
     use_vocabulary :ccpublic, class: Oargun::Vocabularies::CCPUBLIC
     use_vocabulary :rights, class: Oargun::Vocabularies::RIGHTS
     use_vocabulary :cclicenses, class: Oargun::Vocabularies::CCLICENSES
+
+    def rdf_label
+      if rdf_subject.to_s.match(/opaquenamespace/)
+        Array(rdf_subject.label)
+      else
+        super
+      end
+    end
   end
 end
