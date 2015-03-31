@@ -7,6 +7,7 @@ module Oargun
     autoload :EURIGHTS
     autoload :GEONAMES
     autoload :ISO_639_2
+    autoload :LCCS
     autoload :LCSH
     autoload :LCNAMES
     autoload :LC_ORGS
