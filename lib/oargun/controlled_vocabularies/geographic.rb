@@ -2,12 +2,13 @@ require 'rest_client'
 
 module Oargun::ControlledVocabularies
   class Geographic < ActiveTriples::Resource
-    include Oargun::RDF::Controlled
+    include LinkedVocabs::Controlled
+    include Oargun::RDF::DeepIndex
 
     configure :rdf_label => RDF::URI('http://www.geonames.org/ontology#name')
-    use_vocabulary :geonames
-    use_vocabulary :lcnames
-    use_vocabulary :lcsh
+    use_vocabulary :geonames, class: Oargun::Vocabularies::GEONAMES
+    use_vocabulary :lcnames, class: Oargun::Vocabularies::LCNAMES
+    use_vocabulary :lcsh, class: Oargun::Vocabularies::LCSH
 
     property :geoname, :predicate => RDF::URI('http://www.geonames.org/ontology#name')
     property :latitude, :predicate => RDF::URI('http://www.w3.org/2003/01/geo/wgs84_pos#lat')
@@ -61,7 +62,7 @@ module Oargun::ControlledVocabularies
       featureCode.respond_to?(:rdf_subject) && top_level_codes.include?(featureCode.rdf_subject)
     end
 
-    class QaGeonames < Oargun::RDF::Controlled::ClassMethods::QaRDF
+    class QaGeonames < LinkedVocabs::Controlled::ClassMethods::QaRDF
       prepend Oargun::Qa::Caching
 
       def search(q, sub_authority = nil)

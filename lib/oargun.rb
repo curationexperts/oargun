@@ -1,6 +1,7 @@
 require 'oargun/version'
 require 'active_support'
 require 'active_triples'
+require 'linked_vocabs'
 require 'qa' if defined? Rails
 
 module Oargun

@@ -1,15 +1,16 @@
 module Oargun::ControlledVocabularies
   class Creator < ActiveTriples::Resource
-    include Oargun::RDF::Controlled
+    include LinkedVocabs::Controlled
+    include Oargun::RDF::DeepIndex
 
-    class QaLcNames < Qa::Authorities::Loc
-      include Oargun::Qa::Caching
-      def initialize
-        super('names')
-      end
-    end
+#    class QaLcNames < Qa::Authorities::Loc
+#      include Oargun::Qa::Caching
+#      def initialize
+#        super('names')
+#      end
+#    end
 
-    @qa_interface = QaLcNames.new
+#    @qa_interface = QaLcNames.new
 
   end
 end

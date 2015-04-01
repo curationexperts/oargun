@@ -10,4 +10,5 @@ module Oargun::ControlledVocabularies
   autoload :Language
   autoload :Organization
   autoload :RightsStatement
+  autoload :CopyrightStatus
 end
