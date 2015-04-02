@@ -2,8 +2,7 @@ require 'rest_client'
 
 module Oargun::ControlledVocabularies
   class Geographic < ActiveTriples::Resource
-    include LinkedVocabs::Controlled
-    include Oargun::RDF::DeepIndex
+    include Oargun::RDF::Controlled
 
     configure :rdf_label => RDF::URI('http://www.geonames.org/ontology#name')
     use_vocabulary :geonames, class: Oargun::Vocabularies::GEONAMES

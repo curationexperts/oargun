@@ -1,7 +1,6 @@
 module Oargun::ControlledVocabularies
   class RightsStatement < ActiveTriples::Resource
-    include LinkedVocabs::Controlled
-    include Oargun::RDF::DeepIndex
+    include Oargun::RDF::Controlled
 
     configure rdf_label: RDF::DC11.title
 
