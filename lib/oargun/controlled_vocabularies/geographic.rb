@@ -61,48 +61,5 @@ module Oargun::ControlledVocabularies
       top_level_codes = [RDF::URI('http://www.geonames.org/ontology#A.PCLI')]
       featureCode.respond_to?(:rdf_subject) && top_level_codes.include?(featureCode.rdf_subject)
     end
-
-    class QaGeonames < LinkedVocabs::Controlled::ClassMethods::QaRDF
-      prepend Oargun::Qa::Caching
-
-      def search(q, sub_authority = nil)
-        q = URI.escape(q)
-        uri = "http://api.geonames.org/searchJSON?q=#{q}&maxRows=20&username=#{APP_CONFIG['geonames']['username']}"
-        json_terms = get_json(uri)["geonames"]
-        self.response = build_response(json_terms)
-      end
-
-      def results
-        return response
-      end
-
-      private
-
-      def get_json(url)
-        r = RestClient.get url, {accept: :json}
-        self.response = JSON.parse(r)
-      end
-
-      def build_response(json_response)
-        return json_response.collect {|geo| geo_json_to_qa_item(geo)}
-      end
-
-      def geo_json_to_qa_item(geo)
-        item = { id: APP_CONFIG['geonames']['prefix'] + geo['geonameId'].to_s }
-        item[:label] = geo["toponymName"]
-        unless geo["countryName"].blank?
-          if geo["adminName1"].blank?
-            item[:label] += " (%s)" % geo["countryName"]
-          else
-            item[:label] += " (%s >> %s)" % [geo["countryName"], geo["adminName1"]]
-          end
-        end
-
-        return item
-      end
-    end
-
-    @qa_interface = QaGeonames.new
-
   end
 end
