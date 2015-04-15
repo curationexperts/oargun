@@ -29,5 +29,5 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'rdf-vocab', '~> 0.6'
   spec.add_dependency 'qa', '~> 0.4.0'
   spec.add_dependency 'active-triples', '~> 0.6.0'
-  spec.add_dependency 'active-fedora', '~> 9.0.0'
+  spec.add_dependency 'active-fedora', '~> 9.0'
 end
