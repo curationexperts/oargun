@@ -1,4 +1,4 @@
-require 'rdf-vocab'
+require 'rdf/vocab'
 module Oargun::ControlledVocabularies
   class WorkType < ActiveTriples::Resource
     include Oargun::RDF::Controlled
