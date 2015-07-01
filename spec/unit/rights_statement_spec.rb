@@ -22,6 +22,13 @@ describe Oargun::ControlledVocabularies::RightsStatement do
         expect(subject.rdf_label).to eq ['Educational Use Permitted']
       end
     end
+    context 'with an invalid opaquenamespace URI' do
+      let(:uri) { RDF::URI.new('http://opaquenamespace.org/rights/educational/') }
+
+      it 'raises an error' do
+        expect { subject.rdf_label }.to raise_error Oargun::ControlledVocabularies::TermNotFound
+      end
+    end
   end
 
 end
