@@ -12,7 +12,6 @@ module Oargun
     autoload :LCNAMES
     autoload :LC_ORGS
     autoload :LDP
-    autoload :MARCREL
     autoload :OARGUN
     autoload :TGM
     autoload :RIGHTS
