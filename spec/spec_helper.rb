@@ -11,7 +11,7 @@ LinkedVocabs.add_vocabulary('ccpublic', 'http://creativecommons.org/publicdomain
 LinkedVocabs.add_vocabulary('tgm', 'http://id.loc.gov/vocabulary/graphicMaterials')
 LinkedVocabs.add_vocabulary('aat', 'http://vocab.getty.edu/aat/')
 LinkedVocabs.add_vocabulary('cclicenses', 'http://creativecommons.org/licenses/')
-LinkedVocabs.add_vocabulary('rights', 'http://opaquenamespace.org/rights/')
+LinkedVocabs.add_vocabulary('rights', 'http://opaquenamespace.org/ns/rights/')
 LinkedVocabs.add_vocabulary('lc_orgs', 'http://id.loc.gov/vocabulary/organizations/')
 LinkedVocabs.add_vocabulary('ldp', 'http://www.w3.org/ns/ldp#')
 
