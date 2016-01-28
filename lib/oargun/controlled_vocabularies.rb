@@ -8,6 +8,7 @@ module Oargun::ControlledVocabularies
   autoload :Organization
   autoload :RightsStatement
   autoload :CopyrightStatus
+  autoload :ResourceType
 
   # used when unable to find a registered term for a given URI
   class TermNotFound < StandardError; end

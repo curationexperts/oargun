@@ -9,6 +9,7 @@ module Oargun
     autoload :ISO_639_2
     autoload :LCCS
     autoload :LCSH
+    autoload :LCRT
     autoload :LCNAMES
     autoload :LC_ORGS
     autoload :LDP
