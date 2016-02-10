@@ -36,11 +36,11 @@ module Oargun::ControlledVocabularies
     end
 
     # Fetch parent features if they exist. Necessary for automatic population of rdf label.
-    def fetch
+    def fetch(*args)
       result = super
       return result if top_level_element?
       parentFeature.each do |feature|
-        feature.fetch
+        feature.fetch(*args)
       end
       result
     end
